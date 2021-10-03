@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int daysInMonths[] = { 31, 28, 31, 30, 31,30, 31, 31, 30, 31,30,31 };
+	int day;
+	int month;
+	cin >> day >> month;
+
+	if (month > 12 || daysInMonths[month - 1] < day)
+	{
+		cout << "неверные данные";
+		return 0;
+	}
+	int remainingDays = daysInMonths[month - 1] - day;
+	for (int i = month; i < 12; i++)
+	{
+		remainingDays += daysInMonths[i];
+
+	}
+	cout << remainingDays;
+	return 0;
+}
